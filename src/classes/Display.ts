@@ -15,7 +15,6 @@ export class Display implements HasRender {
   }
 
   render(docObj: HasHtmlFormat, docType: string) {
-    this.formContainer.innerHTML = "";
     const htmlString: string = docObj.htmlFormat();
     this.container.innerHTML = htmlString;
     if (docType === "invoice") {
@@ -24,5 +23,6 @@ export class Display implements HasRender {
       this.btnPrint.innerText = "Imprimer le Devis";
     }
     this.hiddenDiv.classList.remove("invisible");
+    this.formContainer.innerHTML = "";
   }
 }

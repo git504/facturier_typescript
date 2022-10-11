@@ -6,7 +6,6 @@ export class Display {
         this.formContainer = document.getElementById("form-container");
     }
     render(docObj, docType) {
-        this.formContainer.innerHTML = "";
         const htmlString = docObj.htmlFormat();
         this.container.innerHTML = htmlString;
         if (docType === "invoice") {
@@ -16,5 +15,6 @@ export class Display {
             this.btnPrint.innerText = "Imprimer le Devis";
         }
         this.hiddenDiv.classList.remove("invisible");
+        this.formContainer.innerHTML = "";
     }
 }
