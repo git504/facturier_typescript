@@ -8,5 +8,4 @@ Un simple facturier en **TypeScript**
 
 ![Illustration](./public/assets/Screenshot%20from%202022-10-11%2008-37-02.png)
 
-ctrl + c
-ctrl + c
+ctrl + ²
