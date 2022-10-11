@@ -17,11 +17,15 @@ export class FormInput {
         this.tva = document.getElementById("tva");
         this.docContainer = document.getElementById("document-container");
         this.hiddenDiv = document.getElementById("hiddenDiv");
+        this.storedE1 = document.getElementById("stored-data");
         this.btnPrint = document.getElementById("print");
         this.btnReload = document.getElementById("reload");
+        this.btnStoredInvoices = document.getElementById("stored-invoices");
+        this.btnStoredEstimates = document.getElementById("stored-estimates");
         this.submitFormListeners();
         this.printListener(this.btnPrint, this.docContainer);
         this.deleteListener(this.btnReload);
+        this.getStoredDocsListener();
     }
     submitFormListeners() {
         this.form.addEventListener("submit", this.handleFormSubmit.bind(this));
@@ -38,6 +42,38 @@ export class FormInput {
             document.location.reload();
             window.scrollTo(0, 0);
         });
+    }
+    getStoredDocsListener() {
+        this.btnStoredInvoices.addEventListener("click", this.getItems.bind(this, "invoice"));
+        this.btnStoredEstimates.addEventListener("click", this.getItems.bind(this, "estimate"));
+    }
+    getItems(doctype) {
+        if (this.storedE1.hasChildNodes()) {
+            this.storedE1.innerHTML = "";
+        }
+        if (localStorage.getItem(doctype)) {
+            let array;
+            array = localStorage.getItem(doctype);
+            if (array != null && array.length > 2) {
+                let arrayData;
+                arrayData = JSON.parse(array);
+                arrayData.map((doc) => {
+                    let card = document.createElement("div");
+                    let cardBody = document.createElement("div");
+                    let cardClasses = ["card", "mt-5"];
+                    let cardBodyClasses = "cardB-body";
+                    card.classList.add(...cardClasses);
+                    cardBody.classList.add(cardBodyClasses);
+                    cardBody.innerHTML = doc;
+                    card.append(cardBody);
+                    this.storedE1.append(card);
+                });
+            }
+            else {
+                this.storedE1.innerHTML =
+                    '<div class="p-5">Aucune data disponnible</div>';
+            }
+        }
     }
     handleFormSubmit(e) {
         e.preventDefault();
