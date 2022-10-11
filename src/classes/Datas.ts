@@ -26,7 +26,6 @@ export class Datas implements HasHtmlFormat {
     const totalePrice = this.subtotal(this.price, this.quantity, this.tva);
 
     return `
-
 <div class="row p-5">
       <div class="col-md-6">
     <h2 class="text-left">LOGO</h2>
@@ -34,7 +33,7 @@ export class Datas implements HasHtmlFormat {
 
 <div class="col-md-6 text-right">
     <p class="font-weight-bold mb-1">${
-      this.documentType === "invoice" ? "Facture" : "Devis"
+      this.documentType === "invoice " ? "Facture " : "Devis"
     }<span class="font-weight-normal">${
       Math.floor(Math.random()) * 101
     }</span></p>
