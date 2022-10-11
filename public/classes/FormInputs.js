@@ -18,18 +18,25 @@ export class FormInput {
         this.docContainer = document.getElementById("document-container");
         this.hiddenDiv = document.getElementById("hiddenDiv");
         this.btnPrint = document.getElementById("print");
+        this.btnReload = document.getElementById("reload");
         this.submitFormListeners();
         this.printListener(this.btnPrint, this.docContainer);
+        this.deleteListener(this.btnReload);
     }
     submitFormListeners() {
         this.form.addEventListener("submit", this.handleFormSubmit.bind(this));
     }
     printListener(btn, docContainer) {
         btn.addEventListener("click", () => {
-            console.log("hello");
             let availableDoc;
             availableDoc = new Print(docContainer);
             availableDoc.print();
+        });
+    }
+    deleteListener(btn) {
+        btn.addEventListener("click", () => {
+            document.location.reload();
+            window.scrollTo(0, 0);
         });
     }
     handleFormSubmit(e) {

@@ -21,6 +21,7 @@ export class FormInput {
   docContainer: HTMLDivElement;
   hiddenDiv: HTMLDivElement;
   btnPrint: HTMLButtonElement;
+  btnReload: HTMLButtonElement;
 
   constructor() {
     this.form = document.getElementById("form") as HTMLFormElement;
@@ -40,10 +41,12 @@ export class FormInput {
     ) as HTMLDivElement;
     this.hiddenDiv = document.getElementById("hiddenDiv") as HTMLDivElement;
     this.btnPrint = document.getElementById("print") as HTMLButtonElement;
+    this.btnReload = document.getElementById("reload") as HTMLButtonElement;
 
     // Listener
     this.submitFormListeners();
     this.printListener(this.btnPrint, this.docContainer);
+    this.deleteListener(this.btnReload);
   }
 
   //Listeners
@@ -53,11 +56,16 @@ export class FormInput {
 
   private printListener(btn: HTMLButtonElement, docContainer: HTMLDivElement) {
     btn.addEventListener("click", () => {
-      console.log("hello");
-
       let availableDoc: HasPrint;
       availableDoc = new Print(docContainer);
       availableDoc.print();
+    });
+  }
+
+  private deleteListener(btn: HTMLButtonElement) {
+    btn.addEventListener("click", () => {
+      document.location.reload();
+      window.scrollTo(0, 0);
     });
   }
 
