@@ -1,8 +1,8 @@
 // Methode decorator
 
 export function bind(
-  target: any,
-  name: string,
+  _target: any,
+  _name: string,
   descriptor: PropertyDescriptor
 ) {
   const originalMethode = descriptor.value;

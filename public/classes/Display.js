@@ -1,4 +1,4 @@
-import { Storage } from "../classes/Storage.js";
+import { Storage } from "../classes/Storage";
 export class Display {
     constructor(container, hiddenDiv, btnPrint) {
         this.container = container;

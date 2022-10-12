@@ -1,4 +1,4 @@
-import { FormInput } from "./classes/FormInputs.js";
-import { Storage } from "./classes/Storage.js";
+import { FormInput } from "./classes/FormInputs";
+import { Storage } from "./classes/Storage";
 new FormInput();
 Storage.checkLocalStorage();

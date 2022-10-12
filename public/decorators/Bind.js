@@ -1,4 +1,4 @@
-export function bind(target, name, descriptor) {
+export function bind(_target, _name, descriptor) {
     const originalMethode = descriptor.value;
     const newDescriptor = {
         get() {
