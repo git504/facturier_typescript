@@ -6,3 +6,6 @@ A simple invoice writer
 - [**conventionalcommits**](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ![Illustration](./public/assets/Screenshot%20from%202022-10-11%2008-37-02.png)
+
+npm start
+http://localhost:3000/public/index.html
