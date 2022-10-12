@@ -132,3 +132,4 @@ export class FormInput {
 __decorate([
     bind
 ], FormInput.prototype, "handleFormSubmit", null);
+//# sourceMappingURL=FormInputs.js.map

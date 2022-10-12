@@ -7,3 +7,4 @@ export function bind(_target, _name, descriptor) {
     };
     return newDescriptor;
 }
+//# sourceMappingURL=Bind.js.map

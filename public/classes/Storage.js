@@ -24,3 +24,4 @@ export class Storage {
         }
     }
 }
+//# sourceMappingURL=Storage.js.map
