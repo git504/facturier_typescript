@@ -51,8 +51,8 @@ export class FormInput {
         });
     }
     getStoredDocsListener() {
-        this.btnStoredInvoices.addEventListener("click", this.getItems.bind(this, "invoice"));
-        this.btnStoredEstimates.addEventListener("click", this.getItems.bind(this, "estimate"));
+        this.btnStoredInvoices.addEventListener("click", () => this.getItems("invoice"));
+        this.btnStoredEstimates.addEventListener("click", () => this.getItems("estimate"));
     }
     getItems(doctype) {
         if (this.storedE1.hasChildNodes()) {

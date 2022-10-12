@@ -89,14 +89,21 @@ export class FormInput {
   }
 
   private getStoredDocsListener(): void {
-    this.btnStoredInvoices.addEventListener(
-      "click",
-      this.getItems.bind(this, "invoice")
+    // this.btnStoredInvoices.addEventListener(
+    //   "click",
+    //   this.getItems.bind(this, "invoice")
+    // );
+
+    // this.btnStoredEstimates.addEventListener(
+    //   "click",
+    //   this.getItems.bind(this, "estimate")
+    // );
+    this.btnStoredInvoices.addEventListener("click", () =>
+      this.getItems("invoice")
     );
 
-    this.btnStoredEstimates.addEventListener(
-      "click",
-      this.getItems.bind(this, "estimate")
+    this.btnStoredEstimates.addEventListener("click", () =>
+      this.getItems("estimate")
     );
   }
 
